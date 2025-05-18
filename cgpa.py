@@ -1,4 +1,4 @@
-def grade_to_point(grade):
+def grade_point(grade):
     grade = grade.upper()
     if grade == 'A':
         return 5.0
@@ -25,7 +25,7 @@ def main():
 
     for i in range(n):
         grade = input(f"Enter grade for course {i + 1} (A-F): ").strip()
-        if grade_to_point(grade) < 0:
+        if grade_point(grade) < 0:
             print(f"Oops! '{grade}' is not a valid grade. Try again.")
             return
 
@@ -45,7 +45,7 @@ def main():
     total_credits = 0
 
     for i in range(len(grades)):
-        point = grade_to_point(grades[i])
+        point = grade_point(grades[i])
         total_points += point * credits[i]
         total_credits += credits[i]
 
